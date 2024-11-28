@@ -39,7 +39,10 @@
     </div>
   </div>
 </template>
+
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -51,10 +54,21 @@ export default {
     };
   },
   methods: {
-    handleSignup() {
-      // Placeholder logic for signup action
-      alert(`Signup successful for ${this.formData.username}`);
-      console.log(this.formData);
+    async handleSignup() {
+      try {
+        const newUser = {
+          id: Date.now(),
+          username: this.formData.username,
+          email: this.formData.email,
+          password: this.formData.password,
+        };
+        await axios.post("http://localhost:3000/users", newUser);
+        alert("Signup successful!");
+        this.$router.push("/signin");
+      } catch (error) {
+        console.error("Error during signup:", error);
+        alert("Failed to signup!");
+      }
     },
   },
 };

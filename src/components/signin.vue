@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -41,10 +43,24 @@ export default {
     };
   },
   methods: {
-    handleSignin() {
-      // Placeholder logic for signin action
-      alert(`Sign in successful for ${this.formData.email}`);
-      console.log(this.formData);
+    async handleSignin() {
+      try {
+        const response = await axios.get("http://localhost:3000/users", {
+          params: { email: this.formData.email },
+        });
+        const user = response.data.find(
+          (user) => user.password === this.formData.password
+        );
+        if (user) {
+          alert(`Welcome back, ${user.username}!`);
+          this.$router.push("/");
+        } else {
+          alert("Invalid email or password.");
+        }
+      } catch (error) {
+        console.error("Error during sign in:", error);
+        alert("Failed to sign in!");
+      }
     },
   },
 };
