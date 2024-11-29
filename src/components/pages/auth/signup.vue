@@ -62,7 +62,7 @@ export default {
           email: this.formData.email,
           password: this.formData.password,
         };
-        await axios.post("http://localhost:3000/users", newUser);
+        await axios.post("http://localhost:5000/users", newUser);
         alert("Signup successful!");
         this.$router.push("/signin");
       } catch (error) {

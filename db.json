@@ -12,5 +12,74 @@
       "email": "2@gmail.com",
       "password": "123456"
     }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Hướng dẫn sử dụng Vue.js",
+      "content": "Vue.js là một framework JavaScript tiến bộ cho phép xây dựng ứng dụng web dễ dàng và nhanh chóng.",
+      "author": "Nguyễn Văn A",
+      "published": true,
+      "created_at": "2024-11-29T08:30:00Z",
+      "updated_at": "2024-11-29T09:00:00Z",
+      "category": "Frontend"
+    },
+    {
+      "id": 2,
+      "title": "Các tính năng nổi bật của React",
+      "content": "React.js là thư viện JavaScript phổ biến để xây dựng giao diện người dùng, đặc biệt cho các ứng dụng đơn trang.",
+      "author": "Trần Thị B",
+      "published": false,
+      "created_at": "2024-11-28T10:45:00Z",
+      "updated_at": "2024-11-28T11:00:00Z",
+      "category": "Frontend"
+    },
+    {
+      "id": 3,
+      "title": "Tại sao Angular là một lựa chọn tuyệt vời cho ứng dụng doanh nghiệp",
+      "content": "Angular là một framework mạnh mẽ và đầy đủ tính năng phù hợp cho các ứng dụng quy mô lớn và doanh nghiệp.",
+      "author": "Lê Văn C",
+      "published": true,
+      "created_at": "2024-11-27T14:00:00Z",
+      "updated_at": "2024-11-27T14:30:00Z",
+      "category": "Frontend"
+    },
+    {
+      "id": 4,
+      "title": "Giới thiệu về Node.js và ứng dụng trong phát triển back-end",
+      "content": "Node.js là một nền tảng mạnh mẽ giúp phát triển các ứng dụng back-end nhanh chóng và hiệu quả.",
+      "author": "Nguyễn Thị D",
+      "published": true,
+      "created_at": "2024-11-26T09:15:00Z",
+      "updated_at": "2024-11-26T09:45:00Z",
+      "category": "Backend"
+    },
+    {
+      "id": 5,
+      "title": "Cách sử dụng Tailwind CSS trong dự án React",
+      "content": "Tailwind CSS là một framework CSS tiện lợi giúp tạo giao diện đẹp mắt mà không cần phải viết nhiều CSS.",
+      "author": "Phạm Minh E",
+      "published": false,
+      "created_at": "2024-11-25T16:30:00Z",
+      "updated_at": "2024-11-25T17:00:00Z",
+      "category": "Frontend"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Frontend",
+      "description": "Các bài viết liên quan đến phát triển giao diện người dùng."
+    },
+    {
+      "id": 2,
+      "name": "Backend",
+      "description": "Các bài viết liên quan đến phát triển back-end và server."
+    },
+    {
+      "id": 3,
+      "name": "Full Stack",
+      "description": "Các bài viết liên quan đến phát triển ứng dụng web toàn diện."
+    }
   ]
 }
