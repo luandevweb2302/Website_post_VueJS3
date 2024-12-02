@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">Danh sách bài viết</h1>
+    <h1 class="text-2xl font-bold mb-4 text-red-500">Danh sách bài viết</h1>
     <div v-if="loading" class="text-center text-gray-500">Đang tải...</div>
     <div v-if="error" class="text-center text-red-500">{{ error }}</div>
 
