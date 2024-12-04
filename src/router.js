@@ -3,6 +3,8 @@ import Home from "./views/HomePage.vue";
 import Signup from "./components/pages/auth/signup.vue";
 import Signin from "./components/pages/auth/signin.vue";
 import AdminDashboard from "./components/pages/admin/AdminDashboard.vue";
+import AdminPosts from "./components/pages/admin/AdminPosts.vue";
+import AdminNavbar from "./layouts/AdminNavbar.vue";
 const routes = [
   {
     name: "Home",
@@ -19,11 +21,21 @@ const routes = [
     component: Signin,
     path: "/signin",
   },
-  ,
   {
-    name: "AdminDashboard",
-    component: AdminDashboard,
     path: "/admin",
+    component: AdminNavbar,
+    children: [
+      {
+        path: "",
+        name: "AdminDashboard",
+        component: AdminDashboard,
+      },
+      {
+        path: "post",
+        name: "AdminPosts",
+        component: AdminPosts,
+      },
+    ],
   },
 ];
 
