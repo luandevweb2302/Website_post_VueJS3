@@ -61,6 +61,17 @@ export default {
         this.loading = false;
       }
     },
+
+    async deletePost(id) {
+      if (confirm("Bạn có chắc chắn muốn xóa bài viết này?")) {
+        try {
+          await axios.delete(`http://localhost:5000/posts/${id}`);
+          this.fetchPosts();
+        } catch (err) {
+          alert("Không thể xóa bài viết.");
+        }
+      }
+    },
   },
   mounted() {
     this.fetchPosts();
