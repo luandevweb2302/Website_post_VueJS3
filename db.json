@@ -4,7 +4,8 @@
       "id": 1732802827194,
       "username": "luan232",
       "email": "luan@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "role": "admin"
     },
     {
       "id": 1732802993931,
