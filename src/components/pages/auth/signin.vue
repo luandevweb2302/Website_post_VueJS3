@@ -57,21 +57,24 @@ export default {
   methods: {
     async handleSignin() {
       try {
-        const response = await axios.get("http://localhost:5000/users", {
-          params: { email: this.formData.email },
+        const response = await axios.post("http://localhost:5000/login", {
+          email: this.formData.email,
+          password: this.formData.password,
         });
-        const user = response.data.find(
-          (user) => user.password === this.formData.password
-        );
-        if (user) {
+
+        const { user, token } = response.data;
+
+        if (user && token) {
+          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("token", token);
+
           alert(`Welcome back, ${user.username}!`);
-          this.$router.push("/");
-        } else {
-          alert("Invalid email or password.");
+
+          this.$router.push(user.role === "admin" ? "/admin" : "/");
         }
       } catch (error) {
         console.error("Error during sign in:", error);
-        alert("Failed to sign in!");
+        alert("Invalid email or password!");
       }
     },
   },
